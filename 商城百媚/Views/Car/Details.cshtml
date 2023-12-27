@@ -1,0 +1,92 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_LayoutShou.cshtml";
+}
+<!DOCTYPE html>
+@model 商城百媚.Models.Product 
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <style>
+        * { padding: 0px; margin: 0px}
+        .div1{width:400px;/*border:1px solid #000000;*/margin-left:23%;font-size:18px;}        
+        #pleft img { width: 300px; height: 300px; }
+        #pright{ width: 500px; height: 300px; margin-left: 365px;}
+        .li {margin-left:150px;margin-top:-90px;}
+        #quantity { width: 45px;text-align: center}
+        .price1,.price2,.stock{font-size:20px}
+        #photos{width:300px;margin:0 auto}
+        ul li {list-style:none;}
+        #links li {float:left;padding:0px;}
+        #ge{margin-top:10px;}
+        hr{width:1284px;background-color:red;height:1px;}
+        .price1 {text-decoration:line-through;}
+
+    </style>
+</head>
+<body>
+    <hr />
+
+    <div id="all" style="margin-bottom:130px;margin-top:100px">
+        <!--商品图片区-->
+        <div class="div1">
+            <div id="photos">
+                <div id="pleft">
+                    <ul id="links">
+                        <li>
+                            <img src="~/image/@Model.Photo" style="border-radius:10%" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--商品详情区-->
+            <div id="pright">
+                <h1 id="ptitle ge" style="color:black">@Model.Title</h1>
+                <div id="ge">市场价：<span class="price1" style="color:red;font-size:32px">@String.Format("{0:C2}", Model.MarketPrice)</span></div>
+                <h3 id="ge">活动价：<span class="price2">@String.Format("{0:C2}", Model.Price)</span></h3>
+                <div id="ge">库存量：<span class="stock" style="color:red">@Model.Stock 件</span></div>
+                <div id="ge">销量：<span class="stock">@ViewBag.TotalSale 件</span></div>
+                @using (Html.BeginForm("Add", "Car"))
+                {
+                    <div id="ge">
+                        购买数量：
+                        <span id="increase" class="increase" onclick="add()">+</span>
+                        <input id="quantity" name="quantity" value="1" maxlength="4" type="text" />
+                        <span id="decrease" class="decrease" onclick="sub()">-</span>
+                    </div>
+                    <div id="op" style="margin-top:3%">
+                        <input type="hidden" name="id" value="@Model.ProductID" id="id" />
+
+                        <a class="btn btn-primary" onclick="addCart()">加入购物车</a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    //数量加
+    function add() {
+        var num = parseInt(document.getElementById("quantity").value);
+        if (num < 1000)
+            document.getElementById("quantity").value = num + 1;
+    }
+    //数量减
+    function sub() {
+        var num = parseInt(document.getElementById("quantity").value);
+        if (num < 1000)
+            document.getElementById("quantity").value = num - 1;
+    }
+    $(".center p a").click(function () {
+        var img = $(this).parent().siblings("img").attr("src");
+
+    })
+
+    function addCart() {
+        var num = parseInt(document.getElementById("quantity").value);
+        location.href = "/Shop/addCart/@Model.ProductID?num=" + num;
+    }
+</script>

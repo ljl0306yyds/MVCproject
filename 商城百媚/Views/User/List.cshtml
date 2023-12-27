@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>List</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <style>
+         #zhu {width:1120px;height:500px;margin:0px auto;border:1px solid #808080;}
+         #zhong {text-align:center;}
+         #zhong {margin-top:20px;}
+         #zhong p{margin-top:20px;}
+    </style>
+</head>
+<body>
+    @model 商城百媚.Models.User
+    <div id="zhu">
+        <table class="table table-bordered table-striped" id="zhong">
+            <tr>
+                <td>登录名</td>
+                <td>密码</td>
+                <td>邮箱</td>
+                <td>昵称</td>
+            </tr>
+            <tr>
+                <td>@Model.UserName</td>
+                <td>@Model.Pwd</td>
+                <td>@Model.Email</td>
+                <td>@Model.Nick</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

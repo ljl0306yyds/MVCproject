@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <style>
+        #center {width:1280px;height:700px;}
+        /*头部*/
+        #logo {width:1220px;height:80px;margin:0px auto;}
+        #logo ul li img{width:160px;height:70px;}
+        #logo ul li{float:left;list-style:none;margin-left:27px;}
+        .menu {margin-top :23px;}
+        #logo ul li a{text-decoration:none;font-size:22px;color:black;}
+        #logo ul li a:hover{font-weight:bold;color:black;}
+        #logo ul li a:active{font-weight:bold;color:red;}
+        #xiang {width:1280px;height:4px;background-color:red;}
+    </style>
+</head>
+<body>
+    <div class="center">
+        <!--头部-->
+        <div id="logo">
+            <ul style="margin-left:15%">
+                <li class="menu">
+                    <a href="/Admin/Index">后台主页</a>
+                </li>
+                <li class="menu">
+                    <a href="/Admin/Add">商品上架</a>
+                </li>
+                <li class="menu">
+                    <a href="/User/user">用户管理</a>
+                </li>
+                <li class="menu">
+                    <a href="/Admin/Ding">订单管理</a>
+                </li>
+                <li class="menu">
+                    <a href="/Shou/Index">网站首页</a>
+                </li>
+                <li class="menu">
+                    <a href="/Shou/Index">退出后台</a>
+                </li>
+                <li class="menu">
+
+                </li>
+            </ul>
+        </div>
+        <div id="xiang"></div>
+        <!--中间内容-->
+        <div id="content">
+            <div id="indexwelcome">
+                <section>
+                    @RenderBody()
+                </section>
+            </div>
+        </div>
+        <!--底部内容-->
+        <div id="cpoytop">
+           
+        </div>
+
+    </div>
+
+</body>
+</html>

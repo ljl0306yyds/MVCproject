@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/static/css/plugins.min.css">
+    <link rel="stylesheet" href="~/static/css/style.min.css">
+    <script src="~/static/js/plugins.min.js"></script>
+</head>
+<body>
+
+    <!-- 头部 -->
+    <header class="main-header-area">
+        <div class="header-top bg-pronia-primary d-none d-lg-block">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-6">
+                        <div class="header-top-left">
+                            <span class="pronia-offer">
+                                @if (MyAuthentication.IsLogin() && MyAuthentication.GetRights() == "user")
+                                {
+                                    <li id="lift">
+                                        欢迎您 <span style="color:red;"> @MyAuthentication.GetUserName() </span>
+                                        【<a href="/Home/Logout">退出</a>】
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li id="lift">
+                                        欢迎来到本网站【
+                                        <a href="/Shou/Login">登录</a>
+                                        <a href="/Shou/Reg">注册</a>】
+                                    </li>
+                                }
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="header-top-right">
+                            <ul class="dropdown-wrap">
+                                <li><a class="dropdown-item" style="color:white" href="/Shop/Orders">我的订单</a></li>
+                                <li><a class="dropdown-item" style="color:white" href="/Shop/Index">购物车</a></li>
+                                <li><a class="dropdown-item" style="color:white" href="/Admin/Login">登录后台</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @*导航栏*@
+        <div class="header-bottom d-none d-lg-block">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="main-menu position-relative">
+                            <nav class="main-nav">
+                                <ul>
+                                    <li class="drop-holder" style="margin-left:230px">
+                                        <a href="/Shou/Index">首页</a>
+                                    </li>
+                                    <li class="megamenu-holder">
+                                        <a href="/Shou/Gril">衣服</a>
+                                    </li>
+                                    <li class="drop-holder">
+                                        <a href="/Shou/Furniture">裙子</a>
+                                    </li>
+                                    <li>
+                                        <a href="/Shou/Child">裤子</a>
+                                    </li>
+                                    <li class="drop-holder">
+                                        <a href="/Shou/Boys">鞋子</a>
+                                    </li>
+                                    <li>
+                                        <a href="/Shou/Beauty">手表</a>
+                                    </li>
+                                    <li style="margin-left:200px;margin-top:5px">
+                                        @using (Html.BeginForm("Search", "Shou"))
+                                        {
+                                            <input type="text" name="pname" style="color:black;height:35px" placeholder="搜索商品" value="" />
+                                            <input type="submit" name="name" style=" background-color: lightgreen; color: white; border: solid 5px  lightgreen " id="put-in" value="搜索" />
+                                        }
+
+                                    </li>
+                                </ul>
+
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*导航栏悬浮*@
+        <div class="header-sticky py-4 py-lg-0">
+            <div class="container">
+                <div class="header-nav position-relative">
+                    <div class="row align-items-center">
+                        <div class="col-lg-3 col-6">
+
+                            <a href="" class="header-logo">
+                                <img src="~/static/picture/dark.png" alt="Logo">
+                            </a>
+
+                        </div>
+                        <div class="col-lg-6 d-none d-lg-block">
+                            <div class="main-menu">
+                                <nav class="main-nav">
+                                    <ul>
+                                        <li class="drop-holder">
+                                            <a href="/Shou/Index">首页</a>
+                                        </li>
+                                        <li class="megamenu-holder">
+                                            <a href="/Shou/Gril">衣服</a>
+                                        </li>
+                                        <li class="drop-holder">
+                                            <a href="/Shou/Furniture">裙子</a>
+                                        </li>
+                                        <li>
+                                            <a href="/Shou/Child">裤子</a>
+                                        </li>
+                                        <li class="drop-holder">
+                                            <a href="/Shou/Boys">鞋子</a>
+                                        </li>
+                                        <li>
+                                            <a href="/Shou/Beauty">手表</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6">
+                            <div class="header-right">
+                                <ul>
+                                    <li style="float:left">
+                                        @using (Html.BeginForm("Search", "Shou"))
+                                        {
+                                            <input type="text" name="pname" style="color:black;height:35px" placeholder="搜索商品" value="" />
+                                            <span>
+                                                <input type="submit" name="name" style=" background-color: lightgreen; color: white; border: solid 5px  lightgreen " id="put-in" value="搜索" />
+                                            </span>
+                                        }
+
+                                    </li>
+
+
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="global-overlay"></div>
+    </header>
+    <!--首页内容-->
+    <div id="middle">
+        @RenderBody()
+    </div>
+    <!--尾部-->
+    <div id="foots" style="background-color:black;height:100px;">
+        <div></div>
+        <div style="color:white;">
+            <div style="margin-left:33%;">
+                <p style="margin-left:20%">
+                                                      关于本网站
+                </p>
+                <p>
+                    我是刘加乐
+                </p>
+                <p>
+                    我是刘加乐
+                </p>             
+                <p>
+                    我是刘加乐
+                </p>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

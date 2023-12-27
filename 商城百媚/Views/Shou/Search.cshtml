@@ -1,0 +1,37 @@
+﻿@model IEnumerable<商城百媚.Models.Product>
+@{
+    Layout = "~/Views/Shared/_LayoutShou.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Search</title>
+    <link href="~/css/Gril.css" rel="stylesheet" />
+</head>
+<body>
+    <!--首页内容-->
+    <div id="middle" >
+        <!--女装-->
+        <div id="jian">
+            @foreach (Product item in Model)
+            {
+                <a href="/Car/Details/@item.ProductID">
+                    <dl>
+                        <dt><img src="~/image/@item.Photo" /></dt>
+                        <dd class="ef">@item.Title</dd>
+                        <dd class="ji">@item.Content</dd>
+                        <dd>
+                            <span class="e">￥@item.Price</span>
+                            <span class="zhe">￥@item.MarketPrice</span>
+                        </dd>
+                    </dl>
+                </a>
+            }
+
+        </div>
+    </div>
+</body>
+</html>

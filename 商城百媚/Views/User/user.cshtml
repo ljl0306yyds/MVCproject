@@ -1,0 +1,51 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>user</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <style>
+        #logo ul li:nth-child(4) a{font-weight:bold;color:black ;}
+         #zhu {width:1120px;height:500px;margin:0px auto;border:1px solid #808080;}
+         #zhong {text-align:center;}
+         #zhong {margin-top:20px;}
+         
+    </style>
+</head>
+<body>
+    <div id="zhu">
+        <a style="font-size:28px;color:black;" href="/User/zhuc">注册新用户</a>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <td>登录名</td>
+                <td>密码</td>
+                <td>邮箱</td>
+                <td>昵称</td>
+                <td>操作</td>
+            </tr>
+            @using 商城百媚.Models
+            @foreach (var item in Model as List<User>)
+            {
+                <tr>
+                    <td>@item.UserName</td>
+                    <td>@item.Pwd</td>
+                    <td>@item.Email</td>
+                    <td>@item.Nick</td>
+                    <td>
+                        <a href="/User/Update/@item.UserID">编辑</a>|
+                        <a href="/User/List/@item.UserID">详情</a>
+                    </td>
+                </tr>
+            }
+
+
+        </table>
+    </div>
+</body>
+</html>

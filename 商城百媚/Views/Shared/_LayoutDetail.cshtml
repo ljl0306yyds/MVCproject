@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+@model 商城百媚.Models.Product
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>   
+    <div id="all">
+        <!--商品图片区-->
+        <div id="photos">
+            <div id="pleft">
+                <div id="shpw">
+                    <img src="~/image/@Model.Photo" />
+                </div>
+                <ul id="link">
+                    <li>
+                        <img src="~/image/@Model.Photo" />
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--商品详情区-->
+        <div id="pright">
+            <div id="ptitle">@Model.Title</div>
+            <div>市场价：<span class="price1">@String.Format("{0:C2}", Model.MarketPrice)</span></div>
+            <div>活动价：<span class="price2">@String.Format("{0:C2}", Model.Price)</span></div>
+            <div>库存量：<span class="stock">@Model.Stock 件</span></div>
+            <div id="pcount">
+                <a href="#">销量<span class="red">@ViewBag.TotalSale</span></a>
+            </div>
+            @using (Html.BeginForm("Add", "Car"))
+            {
+            <div>
+                购买数量：
+                @*<a href="/Car/Add/@Model.ProductID?quantity=1">+</a>
+                <input type="text" name="quantity" value="1" class="text" style="width:80px" />件
+                <a href="/Car/Del/@Model.ProductID">-</a>*@
+                <span id="increase" class="increase" onclick="add()">+</span>
+                <input id="quantity" name="quantity" value="1" maxlength="4" type="text" />
+                <span id="decrease" class="decrease" onclick="sub()">-</span>
+            </div>
+                <div id="op">
+                    <input type="hidden" name="id" value="@Model.ProductID" id="id" />
+                    @if (MyAuthentication.IsLogin())
+                    {
+                        <input type="submit" value="购买商品" class="btnop" />
+                    }
+                </div>
+            }
+        </div>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    //数量加
+    function add() {
+        var num = parseInt(document.getElementById("quantity").value);
+        if (num < 1000)
+            document.getElementById("quantity").value = num + 1;
+    }
+    //数量减
+    function sub() {
+        var num = parseInt(document.getElementById("quantity").value);
+        if (num < 1000)
+            document.getElementById("quantity").value = num - 1;
+    }
+    $(".center p a").click(function () {
+        var img = $(this).parent().siblings("img").attr("src");
+
+    })
+</script>

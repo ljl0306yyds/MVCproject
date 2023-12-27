@@ -1,0 +1,97 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Update</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <style>
+         #zhu {width:1120px;height:500px;margin:0px auto;border:1px solid #808080;}
+        #zhong {text-align:center;margin-left:250px;}
+         #zhong {margin-top:20px;width:500px;}
+         #zhong p{margin-top:20px;}
+    </style>
+</head>
+<body>
+    <div id="zhu">
+        @*@using 商城百媚.Models
+            @{
+                user user = new user();
+            }
+            <form action="/User/Update" method="post" style="width:400px" class="container">
+                <div>
+                    <label class="form-group">登录名</label>
+                    <input type="text" name="UserName" value="@user.UserName" class="form-control"/>
+                </div>
+                <div>
+                    <label class="form-group">密码</label>
+                    <input type="password" name="Pwd" value="@user.Pwd" class="form-control"/>
+                </div>
+                <div>
+                    <label class="form-group">邮箱</label>
+                    <input type="text" name="Email" value="@user.Email" class="form-control"/>
+                </div>
+                <div>
+                    <label class="form-group">昵称</label>
+                    <input type="text" name="Nick" value="@user.Nick" class="form-control"/>
+                </div>
+                <input type="submit"  value="保存修改" class="form-control btn btn-danger"/>
+            </form>*@
+        @model 商城百媚.Models.User
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal " id="zhong"   >
+                <h4>商品修改</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.UserID)
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Pwd, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Pwd, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Pwd, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Nick, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Nick, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Nick, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="保存" class="btn btn-block" />
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #center {width:1280px;height:700px;}
+        /*头部*/
+        #logo {width:1220px;height:80px;margin:0px auto;}
+        #logo ul li img{width:160px;height:70px;}
+        #logo ul li{float:left;list-style:none;margin-left:27px;}
+        .menu {margin-top :23px;}
+        #logo ul li a{text-decoration:none;font-size:22px;color:black;}
+        #logo ul li a:hover{font-weight:bold;}
+        #logo ul li a.active {font-weight:bold;}
+        #xiang {width:1280px;height:4px;background-color:red;}
+        /*尾部*/
+        #foots {width:1280px;height:200px;}
+        #foots img{width:77px;height:48px;position:absolute;left:120px;top:1189px;}
+        #xian {width:1280px;height:5px;background-color:red;}
+        #nei{width:1280px;height:120px;background-color:black;color:white;}
+        #nei h4{text-align:center;line-height:47px;}
+        #nei h6{text-align :center;}
+    </style>
+</head>
+<body>
+    <div id="center">
+        <!--头部-->
+        <div id="logo">
+            <ul>
+                <li><img src="image/魅力惠.png" alt="Chang 后台管理" /></li>
+                <li class="menu">
+                    <a href="/Admin/Index">后台主页</a>
+                </li>
+                <li class="menu">
+                    <a href="/News/Index">商品上架</a>
+                </li>
+                <li class="menu">
+                    <a href="/Categories/Index">用户管理</a>
+                </li>
+                <li class="menu">
+                    <a href="/Orders/Index">订单管理</a>
+                </li>
+                <li class="menu">
+                    <a href="/Shou/Index">网站首页</a>
+                </li>
+                <li class="menu">
+                    <a href="/Admin/Logout">退出后台</a>
+                </li>
+                <li class="menu">
+
+                </li>
+            </ul>
+        </div>
+        <div id="xiang"></div>
+        <!--中间内容-->
+        <div id="content">
+            <div id="indexwelcome">
+                <section>
+                    @RenderBody()
+                </section>
+            </div>
+        </div>
+        <!--底部内容-->
+        <div id="foots">
+            <div id="tian">
+                <img src="image/天猫.png" />
+                <div id="xian"></div>
+            </div>
+            <div id="nei">
+                <h4>关于百媚 法律声明 隐私政策 不正当竞争举报</h4>
+                <h6>增值电信业务经营许可证:浙 XXXXXXXXXXX    市场名称登记证：工商网字XXXXXXXX  出版无网络交易平台服务经营备案证：新出发浙江XXXXXXXXXXXXXX</h6>
+                <h6>互联网违法和不良信息举报电话：0571—81683755blxxjb@alibaba-lic.com     浙公网安备</h6>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

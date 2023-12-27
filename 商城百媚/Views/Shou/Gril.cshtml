@@ -1,0 +1,53 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_LayoutShou.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Gril女装</title>
+    <link href="~/css/Gril.css" rel="stylesheet" />
+    <style >
+      
+       #menu ul li:nth-child(3) a{font-weight:bold;color:black;}
+   
+    </style>
+</head>
+<body>
+    <div id="all">
+        <!--排序-->
+        <div id="botton">
+            <ul>
+                <li class="bone"><a style="color:white;" href="/Shou/Gril">默认排序</a></li>
+                <li><a href="/Home/Xiao">热销</a></li>
+                <li><a href="/Home/Price">价格</a></li>
+                <li><a href="/home/Zhe">折扣</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--首页内容-->
+    <div id="middle">
+        <!--女装-->
+        <div id="jian">
+            @foreach (Product item in ViewBag.Product1)
+            {
+                <a href="/Car/Details/@item.ProductID">
+                    <dl>
+                        <dt><img src="~/image/@item.Photo" /></dt>
+                        <dd class="ef">@item.Title</dd>
+                        <dd class="ji">@item.Content</dd>
+                        <dd>
+                            <span class="e">￥@item.Price</span>
+                            <span class="zhe">￥@item.MarketPrice</span>
+                        </dd>
+                    </dl>
+                </a>
+            }
+        </div>
+
+    </div>
+</body>
+</html>

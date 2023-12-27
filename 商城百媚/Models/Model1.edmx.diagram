@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1544482da87940edb60ffc6ad3c6746b" Name="Diagram1" ZoomLevel="36">
+        <EntityTypeShape EntityType="ChangDBModel.AdminUser" Width="1.5" PointX="16.375" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChangDBModel.Appraise" Width="1.5" PointX="4.875" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChangDBModel.Category" Width="1.5" PointX="1.5" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChangDBModel.Delivery" Width="1.5" PointX="1.5" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChangDBModel.Favorite" Width="1.5" PointX="5.125" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChangDBModel.News" Width="1.5" PointX="18.75" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChangDBModel.Order" Width="1.5" PointX="5.625" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChangDBModel.OrdersDetail" Width="1.5" PointX="9.875" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChangDBModel.Photo" Width="1.5" PointX="3.375" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChangDBModel.Product" Width="1.5" PointX="1.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChangDBModel.User" Width="1.5" PointX="2.25" PointY="1.625" IsExpanded="true" />
+        <AssociationConnector Association="ChangDBModel.FK_Appraise_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="ChangDBModel.FK_Appraise_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="ChangDBModel.FK_Category_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="ChangDBModel.FK_Product_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="ChangDBModel.FK_Orders_Delivery" ManuallyRouted="false" />
+        <AssociationConnector Association="ChangDBModel.FK_Users_Delivery" ManuallyRouted="false" />
+        <AssociationConnector Association="ChangDBModel.FK_Favorite_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="ChangDBModel.FK_Favorite_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="ChangDBModel.FK_Orders_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="ChangDBModel.FK_OrdersDetail_Orders" ManuallyRouted="false" />
+        <AssociationConnector Association="ChangDBModel.FK_OrdersDetail_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="ChangDBModel.FK_Photo_Product" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

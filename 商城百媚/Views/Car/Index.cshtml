@@ -1,0 +1,55 @@
+﻿@model 商城百媚.Models.Order
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <table>
+            <tr>
+                <td>图片</td>
+                <td>名称</td>
+                <td>单价</td>
+                <td>数量</td>
+                <td>小计</td>
+                <td>操作</td>
+            </tr>
+            @foreach (var item in Model.OrdersDetails)
+            {
+                <tr>
+                    <td><img src="~/image/@item.Product.Photo" /></td>
+                    <td>@item.Product.Title</td>
+                    <td>@String.Format("{0:C2}", item.Product.Price)</td>
+                    <td>
+                        <a href="/car/Add/@item.Product.ProductID?quantity=1">+</a>
+                        @item.Quantity
+                        <a href="/car/del/@item.Product.ProductID">-</a>
+                    </td>
+                    <td>@String.Format("{0:C2}",item.Quantity * item.ProductID)</td>
+                    <td>
+                        <a href="/Car/Remove/@item.Product.ProductID">移除</a>
+                    </td>
+                </tr>
+            }
+            <tr>
+                <td colspan="6" style="text-align:right;padding-right:20px;">
+                    总计：@String.Format("{0:C2}", Model.Total)
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6" style="padding-left:220px;">
+                    <a href="/car/clear">清空购物车</a>
+                    <a href="/car/order">去结算</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

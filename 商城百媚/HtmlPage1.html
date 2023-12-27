@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>    
+    <link href="css/Shou.css" rel="stylesheet" />
+    <style> 
+        
+        /*中间*/
+        #zhong {height:auto;width:1280px;}
+        /*排序*/
+        #botton {height:45px;width:1220px;margin:0px auto;}
+        #botton ul li{list-style:none;float:left;width:116px;height:30px;text-align:center;
+                      margin:0px 10px 0px 0px;border-width:0 1px 0 0;border-style:solid;border-color:#b8b5b5;}              
+        #botton ul li a{font-size:13px;text-decoration:none;color:black;line-height:31px;}
+        .bone {width:116px;height:30px;background-color:black;}
+             
+        /*精选*/
+        #jian {height:1000px;width:1220px;margin:0px auto;}
+        #jian a {height:460px;width:300px; margin-right:3px;text-align:center;margin-top:10px;
+                
+        }
+        #jian  dl dt img{height:350px;width:230px;}
+        #jian a{float:left;}
+        #jian p{height:50px;width:1220px;margin:0px auto;text-align:center;font-size:40px;}
+        #jian a{text-decoration:none;}
+        .ef{color:black;font-size:20px;}
+        .ji {color:#b8b5b5;font-size:15px;}
+        .e {line-height:50px;color:black;font-size:20px;}
+        .zhe{color:#b8b5b5;text-decoration:line-through;}
+        /*尾部*/
+        #foots {width:1280px;height:200px;}
+        #foots img{width:77px;height:48px;position:absolute;left:120px;top:1189px;}
+        #xian {width:1280px;height:5px;background-color:red;}
+        #nei{width:1280px;height:120px;background-color:black;color:white;}
+        #nei h4{text-align:center;line-height:47px;}
+        #nei h6{text-align :center;}
+
+        /*女男装*/
+        #gril {height:800px;width:1280px;margin-top:10px;}
+        #griltop img{height:300px;width:1280px;}
+        #gril p{color:white;font-size:60px;position:absolute;left:600px;top:350px;}
+        #zhuang {width:1220px;height:500px;margin:0px auto;}
+        #zhuang  img{width:350px;height:300px;}
+        #zhuang dl{float:left;width:380px;height:450px;border:1px solid black;margin-left:10px;text-align:center;
+                   margin-top:20px;
+        }
+        #boy {height:800px;width:1280px;margin-top:10px;}
+        #griltop img{height:300px;width:1280px;}
+        #boy p{color:white;font-size:60px;position:absolute;left:600px;top:1173px;}
+        #zhuan {width:1220px;height:500px;margin:0px auto;}
+        #zhuan  img{width:350px;height:300px;}
+        #zhuan dl{float:left;width:380px;height:450px;border:1px solid black;margin-left:10px;text-align:center;
+                   margin-top:20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="zhong">
+        <!--头部-->
+        <div id="fix">
+            <ul>
+                <li id="lift">
+                    百媚首页   欢迎来到百媚【
+                    <a href="#">登录</a>
+                    <a href="#">注册</a>】
+                </li>
+                <li id="right">
+                    <a href="#">我的商城</a>
+                    |
+                    <a href="#">购物车</a>
+                    |
+                    <a hreef="#">登录后台</a>
+                </li>
+                <div class="clear"></div>
+            </ul>
+        </div>
+        <div id="all">
+            <!--搜索-->
+            <div id="head">
+                <ul>
+                    <li id="headone">
+                        <a href="#">
+                            <img src="image/魅力惠.png" />
+                        </a>
+                    </li>
+                    <li id="headtwo">
+                        <input type="text" name="name" id="keyword" style="color:#fef8f8;" placeholder="搜索百媚商品" value="" />
+                        <input type="submit" name="name" style=" background-color:red;" id="put-in" value="搜索" />
+                    </li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+            <!--菜单-->
+            <div id="menu">
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">海外直销</a></li>
+                    <li><a href="#">女装</a></li>
+                    <li><a href="#">男装</a></li>
+                    <li><a href="#">箱包配饰</a></li>
+                    <li><a href="#">鞋履</a></li>
+                    <li><a href="#">美妆</a></li>
+                    <li><a href="#">家居</a></li>
+                    <li><a href="#">婴童</a></li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+            <!--排序-->
+            <div id="botton">
+                <ul>
+                    <li class="bone"><a style="color:white;" href="#">默认排序</a></li>
+                    <li><a href="#">热销</a></li>
+                    <li><a href="#">价格</a></li>
+                    <li><a href="#">折扣</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--首页内容-->
+        <!--女装-->
+        <div id="gril">
+            <p>女装</p>
+            <div id="griltop">
+                <img src="image/女装.jpg" />
+            </div>
+            <div id="zhuang">
+                <a href="#">
+                    <dl>
+                        <dt><img src="image/1.jpg" /></dt>
+                        <dd class="ef">45 </dd>
+                        <dd class="jia">￥@item.Price</dd>
+                    </dl>
+                </a>
+                <a href="#">
+                    <dl>
+                        <dt><img src="image/1.jpg" /></dt>
+                        <dd class="ef">45 </dd>
+                        <dd class="jia">￥@item.Price</dd>
+                    </dl>
+                </a>
+                <a href="#">
+                    <dl>
+                        <dt><img src="image/1.jpg" /></dt>
+                        <dd class="ef">45 </dd>
+                        <dd class="jia">￥@item.Price</dd>
+                    </dl>
+                </a>
+            </div>
+            <!--尾部-->
+            <div id="foots">
+                <div id="tian">
+                    <img src="image/天猫.png" />
+                    <div id="xian"></div>
+                </div>
+                <div id="nei">
+                    <h4>关于百媚 法律声明 隐私政策 不正当竞争举报</h4>
+                    <h6>增值电信业务经营许可证:浙 XXXXXXXXXXX    市场名称登记证：工商网字XXXXXXXX  出版无网络交易平台服务经营备案证：新出发浙江XXXXXXXXXXXXXX</h6>
+                    <h6>互联网违法和不良信息举报电话：0571—81683755blxxjb@alibaba-lic.com     浙公网安备</h6>
+                </div>
+            </div>
+        </div>
+        <!--男装-->
+        <div id="boy">
+            <p>男装</p>
+            <div id="griltop">
+                <img src="image/女装.jpg" />
+            </div>
+            <div id="zhuan">
+                <a href="#">
+                    <dl>
+                        <dt><img src="image/1.jpg" /></dt>
+                        <dd class="ef">45 </dd>
+                        <dd class="jia">￥@item.Price</dd>
+                    </dl>
+                </a>
+                <a href="#">
+                    <dl>
+                        <dt><img src="image/1.jpg" /></dt>
+                        <dd class="ef">45 </dd>
+                        <dd class="jia">￥@item.Price</dd>
+                    </dl>
+                </a>
+                <a href="#">
+                    <dl>
+                        <dt><img src="image/1.jpg" /></dt>
+                        <dd class="ef">45 </dd>
+                        <dd class="jia">￥@item.Price</dd>
+                    </dl>
+                </a>
+            </div>
+
+        </div>
+        <!--尾部-->
+        <div id="foots">
+            <div id="tian">
+                <img src="image/天猫.png" />
+                <div id="xian"></div>
+            </div>
+            <div id="nei">
+                <h4>关于百媚 法律声明 隐私政策 不正当竞争举报</h4>
+                <h6>增值电信业务经营许可证:浙 XXXXXXXXXXX    市场名称登记证：工商网字XXXXXXXX  出版无网络交易平台服务经营备案证：新出发浙江XXXXXXXXXXXXXX</h6>
+                <h6>互联网违法和不良信息举报电话：0571—81683755blxxjb@alibaba-lic.com     浙公网安备</h6>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
